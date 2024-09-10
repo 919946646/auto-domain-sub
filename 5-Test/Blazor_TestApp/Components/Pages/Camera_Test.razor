@@ -1,0 +1,16 @@
+﻿@page "/test/Camera_Test"
+@using Modules.Core.Blazor.WebCamera
+<Modules.Core.Blazor.WebCamera.WebCamera @ref="WebCamear"></Modules.Core.Blazor.WebCamera.WebCamera>
+<AntDesign.Button OnClick="TakePhoto">拍照</AntDesign.Button>
+
+<h3>Camera_Test</h3>
+
+@code {
+    WebCamera WebCamear;
+    async Task TakePhoto()
+    {
+
+        var test =await WebCamear.Take_snapshotAsync();
+        var test1 = 222;
+    }
+}

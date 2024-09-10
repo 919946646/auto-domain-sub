@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <IsAotCompatible>True</IsAotCompatible>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+    <IsAotCompatible>True</IsAotCompatible>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.9.2" />
+    <PackageReference Include="SqlSugarCore" Version="5.1.4.167" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\4-Infrastructure\Infrastructure.Common\Infrastructure.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Modules.Core.Domain">
+      <HintPath>..\..\..\DLL\Modules.Core.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Modules.Core.Shared">
+      <HintPath>..\..\..\DLL\Modules.Core.Shared.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

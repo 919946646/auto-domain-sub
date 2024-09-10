@@ -1,0 +1,29 @@
+1. 其他项目中的razor组件需要在PageRouteData.cs里面注册路由，
+
+2. 注意模块里面的@page 地址不能冲突，建议用模块名前缀
+
+解决方案-项目-模块
+
+
+https://www.cnblogs.com/stulzq/p/10172550.html
+System.Drawing.Common 组件提供对GDI+图形功能的访问
+这个就是 libgdiplus
+
+
+//在构造函数中调用异步任务
+            var apiTask = new Task(() => AllRoles = roleRepo.QueryableAsync().Result);
+            apiTask.Start(); // 开始任务 
+            apiTask.Wait(); //等待完成
+            //Task.WaitAll(apiTask); 
+
+/*注意：如果要在函数中等待返回结果,一定要使用 task.Wait();*/
+                var task = Task.Run(async () =>
+                {
+                    // this.TreeData = await _Service.QueryDataTreeAsync(TenantId); //取得role树
+                    //await InvokeAsync(StateHasChanged); //如果进行了异步操作，需要强制刷新
+                });
+                task.Wait();
+
+Debian11 使用Opencvsharp
+https://blog.eldernode.com/configure-opencv-on-debian-11/
+也没解决 OpenCvSharpExtern.so 丢失的问题

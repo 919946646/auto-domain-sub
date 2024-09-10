@@ -1,0 +1,13 @@
+1.纯数字，禁止使用字母，避免扫码枪切换输入法
+2.使用两位数字开头：01-********  用于全局搜索，直接跳转到操作界面
+3.MES编码：
+   01-*****  工序路线单 Print_Wo_Route
+   02-*****  批量转出二维码 Wo_transferSendPage
+
+
+
+上传文件路径命名
+1.对象上传：  Object/对象ID/年/月/yyyyMMDDhhmmssfff.jpg 
+2.模块上传：  系统名/模块ID/年/月/yyyyMMDDhhmmssfff.jpg 
+
+例如：WMS/Stock_in/2024/01/20240101232335.jpg

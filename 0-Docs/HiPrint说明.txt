@@ -1,0 +1,14 @@
+VUE 在线设计，修改打印模板
+https://ccsimple.gitee.io/vue-plugin-hiprint/
+https://ccsimple.github.io/vue-plugin-hiprint/
+
+原生在线设计：
+http://hiprint.io/design
+
+* 注意vue 表格 生成的json中  "type": "table", 需要改名称为“tableCustom",
+* 注意：field 不能重复
+*注意，如果出错，放到hiprint.io里导入然后导出
+
+"printElementType": {
+            "title": "空白表格",
+            "type": "tableCustom",

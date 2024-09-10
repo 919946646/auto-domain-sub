@@ -1,0 +1,62 @@
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@using Modules.Core.Blazor.Pages.Components
+@inject NavigationManager NavigationManager
+<CascadingAuthenticationState>
+    <Modules.Core.Blazor.Layouts.Components.MyErrorBoundary>
+        <ChildContent>
+            @*AdditionalAssemblies用于添加其他项目中的razor页面*@
+            <Router AppAssembly="@typeof(App).Assembly" AdditionalAssemblies="_PageRouteData.AdditionalPages">
+                <Found Context="routeData">
+                    <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(Blazor_TestApp.Components.Layout.MainLayout)">
+                        <Authorizing>
+                            <h2 style="text-align:center"><AntDesign.Icon Type="loading" Theme="outline"></AntDesign.Icon>正在进行身份验证...</h2>
+                        </Authorizing>
+                        <NotAuthorized>
+
+                            @if (context.User.Identity == null)
+                            {
+                                <RedirectToLogin />
+                            }
+                            else
+                            {
+                                <AntDesign.Result Status="403" Title="无权访问" SubTitle="未经授权的访问" />
+                            }
+
+                        </NotAuthorized>
+                    </AuthorizeRouteView>
+
+                    @*导航到新页面时，FocusOnNavigate 组件将焦点设置到页面的顶层标题 (h1)*@
+                    <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+                </Found>
+                <NotFound>
+                    @*  <PageTitle>网址错误</PageTitle>
+                    <LayoutView Layout="@typeof(Modules.Core.Blazor.Layouts.SingleLayout)">
+                    <h3>地址没找到</h3>
+                    </LayoutView>*@
+                    <AntDesign.Result Status="404"
+                            Title="404"
+                            SubTitle="@("\r\n抱歉，您访问的页面不存在。")">
+                        <Extra>
+                            <AntDesign.Button Type="primary" OnClick="BackHome">返回首页</AntDesign.Button>
+
+                        </Extra>
+                    </AntDesign.Result>
+
+                </NotFound>
+            </Router>
+            <AntDesign.AntContainer @rendermode="@InteractiveServer" />
+        </ChildContent>
+    </Modules.Core.Blazor.Layouts.Components.MyErrorBoundary>
+</CascadingAuthenticationState>
+@code {
+    //全局捕获错误，后续页面导航事件中将其重置为非错误状态
+    private ErrorBoundary? errorBoundary;
+    protected override void OnParametersSet()
+    {
+        errorBoundary?.Recover();
+    }
+    void BackHome()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}

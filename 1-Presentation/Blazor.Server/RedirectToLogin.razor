@@ -1,0 +1,15 @@
+﻿@inject NavigationManager navigationManager
+@code {
+
+    protected override void OnInitialized()
+    {
+        try
+        {
+            navigationManager.NavigateTo($"/User/Login?url={Uri.EscapeDataString(navigationManager.Uri)}", forceLoad: true);
+        }
+        catch (Exception)
+        {
+
+        }
+    }
+}

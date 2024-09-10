@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <IsAotCompatible>True</IsAotCompatible>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+    <IsAotCompatible>True</IsAotCompatible>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mapster" Version="7.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Modules.Template.Domain\Modules.Template.Domain.csproj" />
+    <ProjectReference Include="..\Modules.Template.Shared\Modules.Template.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Modules.Core.Domain">
+      <HintPath>..\..\..\DLL\Modules.Core.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Modules.Core.Repository">
+      <HintPath>..\..\..\DLL\Modules.Core.Repository.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <IsAotCompatible>True</IsAotCompatible>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+    <IsAotCompatible>True</IsAotCompatible>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DBOM\**" />
+    <EmbeddedResource Remove="DBOM\**" />
+    <None Remove="DBOM\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Modules.CRM.Domain\Modules.CRM.Domain.csproj" />
+    <ProjectReference Include="..\Modules.CRM.Shared\Modules.CRM.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Modules.Core.Domain">
+      <HintPath>..\..\..\DLL\Modules.Core.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Modules.Core.Repository">
+      <HintPath>..\..\..\DLL\Modules.Core.Repository.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

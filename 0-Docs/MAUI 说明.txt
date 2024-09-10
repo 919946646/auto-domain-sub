@@ -1,0 +1,5 @@
+Maui 编辑项目文件可以看到图标和 splashScreen的定义
+
+https://c.runoob.com/more/svgeditor/  在线png转svg
+
+Maui.WMS 共享 Maui.Wasm里面的页面

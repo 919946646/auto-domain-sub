@@ -1,0 +1,2 @@
+Path.Combine(AppContext.BaseDirectory, "Data", "fake_chart_data.json")
+路径和文件名一定注意大小写，因为Linux是区分大小写的。

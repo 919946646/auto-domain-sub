@@ -1,0 +1,19 @@
+ //Connection is already in use
+ SqlSugar会有偶发的线程安全问题，如果遇到了，
+ 1.异步方法不写await 需要db替换成db.CopyNew() 不想加CopyNet就取排查是否有异步async方法  漏写await
+2.task.WhenAll必须要用 task.run(asunc=>await 异步方法) 必须要用task.run 包一层（copynew也可以）
+3.表达使中用比喻 注意action的表达使禁止用异步 需要func<task>这种类型才能用异步 
+第一步检查有没有漏 await 关键字，
+第二步看方法返回的是不是 Task 类型，void不会进行上下文切换，线程失联就可能出现上面三点异常，
+
+ 参考 https://www.donet5.com/Home/Doc?typeId=1224 
+ .CopyNew()
+ 参考 ProjectHome.razor组件的参数传递方式
+
+
+ In查询（多个字段）
+ List<OrderItem> list=xxx;
+ db.Queryable<OrderItem>().Where(it => list.Any(s => s.Id == it.Id && s.Name == it.Name))
+ //也可以用动态表达式拼OR实现
+//查询in多个字段
+ Expressionable<PurchaseEntity> exp = new Expressionable<PurchaseEntity>();

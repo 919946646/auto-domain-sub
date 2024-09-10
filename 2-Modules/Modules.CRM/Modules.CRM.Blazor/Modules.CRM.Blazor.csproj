@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <IsAotCompatible>True</IsAotCompatible>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+    <IsAotCompatible>True</IsAotCompatible>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\opencv\**" />
+    <Content Remove="wwwroot\opencv\**" />
+    <EmbeddedResource Remove="wwwroot\opencv\**" />
+    <None Remove="wwwroot\opencv\**" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AntDesign" Version="0.20.4.1" />
+    <PackageReference Include="AntDesign.Charts" Version="0.5.5" />
+    <PackageReference Include="DeepCloner" Version="0.10.4" />
+    <PackageReference Include="Humanizer.Core.zh-CN" Version="2.14.1" />
+    <PackageReference Include="Mapster" Version="7.4.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Modules.CRM.AppServices\Modules.CRM.AppServices.csproj" />
+    <ProjectReference Include="..\Modules.CRM.Domain\Modules.CRM.Domain.csproj" />
+    <ProjectReference Include="..\Modules.CRM.Shared\Modules.CRM.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Modules.Core.AppServices">
+      <HintPath>..\..\..\DLL\Modules.Core.AppServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Modules.Core.Blazor">
+      <HintPath>..\..\..\DLL\Modules.Core.Blazor.dll</HintPath>
+    </Reference>
+    <Reference Include="Modules.Core.Domain">
+      <HintPath>..\..\..\DLL\Modules.Core.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Modules.Core.Shared">
+      <HintPath>..\..\..\DLL\Modules.Core.Shared.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

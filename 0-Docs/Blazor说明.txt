@@ -1,0 +1,81 @@
+* 注意一定要在<PropertyColumn>的外面计算结果
+* 注意文件名和类名的大小写一定要一致
+LocalStorage填坑：
+// 浏览器还未加载完js时，不能使用LocalStorage
+可以在Razor页中使用LocalStorage存储Token吗？——不可以，会造成成功登录以后页面需要再刷新一次才能渲染登录成功的UI，似乎是认证状态提供程序没有及时得到Claim造成的。
+在AuthService中使用中间变量似乎也可以实现此机制。——AuthService运行在服务端，Token保存在服务端没有意义。
+https://blog.csdn.net/weixin_38908907/article/details/123090710 使用session
+
+
+因为前后台设计都是用C#语言，很多初学者都会碰到一个坑——分不清前后台代码。提醒初学者：razor组件附属的类或者组件内部@code内的代码都是前台的内容，如何想访问后台可以在页内注入后台服务或者用异步的方式访问。
+
+对于DataTable 数据源
+@*如果TData=string遇到值为DbNull，TData="object" 输入筛选条件页面会出错*@
+
+         @*   <FormItem Label="计算列的公式">*@
+            @*<AntDesign.Input Value="@context[dept_no]" TValue="object"/>*@
+            <@*AntDesign.Input @bind-Value="@context[1].val" TValue="object" />*@
+@*            <AntDesign.Input Value="@context[dept_no]" ValueChanged="" @onchange="(e)=> UpdateValue(e.Value.ToString())" />*@
+
+            @* 不包裹FormItem下面这一行是正确的*@
+            @*<AntDesign.Input Value="@context[dept_no]" TValue="object" ValueChanged="value => UpdateValue(value)" />*@
+        @*</FormItem>*@
+
+技巧：
+绑定里面有字符串  <Radio Value="@("1")">A</Radio>
+绑定里面有字符串拼接 Placeholder="@("模糊查询"+@column.title)"
+OnHeaderCell="@(()=>(new Dictionary<string, object>() {{"style","background-color:" +@column.bgcolor+";" }}))"
+绑定里面的字符串也可以用单引号在外面 Title='("标题")' 
+绑定里面有字符串拼接<Avatar Style="@("background-color:"+ @mac.Machine_status_color+"; vertical-align: middle;")" Size="large">
+DefaultValues="@(new[]{"lucy","jack"})"
+
+将 Razor 组件库的程序集添加到 Router 组件中 您可以通过设置 AdditionalAssemblies 参数来做到这一点：
+
+对于参数为RenderFragment，可如下
+Title='("自定义列")'
+
+    OnChange="(float val)=>{this.EditRows.ForEach(s=>s.Process_qty=val);}"
+*** 注意：从js取得大数据的时候，无法获得数据，是因为您尝试发送的消息超过了基础默认信号器限制（大约为 32K）。
+
+您可以执行两项操作来使此方案正常工作：
+
+增加 SignalR 的消息大小限制。
+这很容易，但我会避免这样做，因为它附带了安全隐患。
+将结果分解为多个较小的块。
+不要一次返回值，而是将其分成多个部分。
+单独发送每个部件。
+收到最后一个零件后组装结果。
+
+
+注意双向绑定的变量@bind-Value="@QrcodeValue"必须是  { get; set; }属性
+
+
+//显示原始html文本
+@((MarkupString)context[column.field])
+
+
+Blazor 的OnInitializedAsync 并不会阻止后续AntDesign table内容执行
+
+
+//根据字符串取得属性
+ <PropertyColumn Property="c=>c.GetType().GetProperty(column.field).GetValue(c, null)" 
+
+
+  //注意：对话框里面的组件的OnParametersSet会被多次错误调用
+
+
+  注意： async void 不能异步更新ui，需要使用 async Task
+
+  await _message.Info 将导致页面等待，需要使用丢弃 _= _message.Info
+
+
+  Blazor 页面里使用 AuthenticationState获得用户名，比localstore更早一步取得用户信息
+   [CascadingParameter]
+        private Task<AuthenticationState> authenticationStateTask { get; set; }
+         //判断用户是否登录
+            var user = (await authenticationStateTask).User;
+
+
+对话框不刷新：可使用 DestroyOnClose 标记
+
+注意：带参数的链接一定要以斜杠结尾  /

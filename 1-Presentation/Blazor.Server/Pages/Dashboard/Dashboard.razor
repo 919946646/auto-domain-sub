@@ -1,0 +1,50 @@
+﻿@page "/Dashboard"
+@inherits BasePage
+<PageTitle>数据中台 - 我的看板</PageTitle>
+<PageHeader Style="margin-bottom: 24px;" Title="站区监控">
+    <PageHeaderExtra>
+        <Button Type="@ButtonType.Primary">当前在线设备</Button>
+        <a target="MqttMsgPanel" href="/Dashboard/Monitor/MqttMsgPanel">消息列表</a>
+        </PageHeaderExtra>
+</PageHeader>
+<Row Type="flex" Gutter="24">
+        <AntDesign.Col Xs="24" Sm="12" Md="12" Lg="12" Xl="6" Style="margin-bottom: 24px;">
+            <Card>
+            <Statistic Title="Active" Value="11.28" Precision="2" ValueStyle="color: #3f8600;" Suffix="%">
+                <PrefixTemplate>
+                    <span><Icon Type="arrow-up" /></span>
+                </PrefixTemplate>
+            </Statistic>
+        </Card>
+        </AntDesign.Col>
+        <AntDesign.Col Xs="24" Sm="12" Md="12" Lg="12" Xl="6" Style="margin-bottom: 24px;">
+           <Card>
+            <Statistic Title="Idle" Value="9.3" Precision="2" ValueStyle="color: #cf1322;" Suffix="%">
+                <PrefixTemplate>
+                    <span><Icon Type="arrow-down" /></span>
+                </PrefixTemplate>
+            </Statistic>
+        </Card>
+        </AntDesign.Col>
+        <AntDesign.Col Xs="24" Sm="12" Md="12" Lg="12" Xl="6" Style="margin-bottom: 24px;">
+        <Card>
+            <Statistic Title="Idle" Value="9.3" Precision="2" ValueStyle="color: #cf1322;" Suffix="%">
+                <PrefixTemplate>
+                    <span><Icon Type="arrow-down" /></span>
+                </PrefixTemplate>
+            </Statistic>
+        </Card>
+        </AntDesign.Col>
+        <AntDesign.Col Xs="24" Sm="12" Md="12" Lg="12" Xl="6" Style="margin-bottom: 24px;">
+           <Card>
+            <Statistic Title="Idle" Value="9.3" Precision="2" ValueStyle="color: #cf1322;" Suffix="%">
+                <PrefixTemplate>
+                    <span><Icon Type="arrow-down" /></span>
+                </PrefixTemplate>
+            </Statistic>
+        </Card>
+        </AntDesign.Col>
+    </Row>
+@code {
+
+}

@@ -1,0 +1,137 @@
+html {
+    font-size: 625%; /*100 ÷ 16 × 100% = 625% 设置rem的基准值，1rem=100px*/
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+body {
+    font-size: 0.14rem;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    /*    overflow-x: hidden;
+    overflow-y: hidden;*/
+}
+
+#app {
+    height: 100%;
+}
+
+img {
+    border-style: none;
+}
+
+a,
+a:focus,
+a:hover {
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+}
+
+div:focus {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
+
+/*覆盖antdesign样式*/
+.ant-page-header {
+    border: 1px solid #ebedf0;
+}
+
+.ant-drawer-body {
+    padding-top: 5px !important;
+}
+
+.ant-input-clear-icon {
+    color: #1890ff !important;
+}
+
+/*.ant-badge-count {
+    z-index: 99 !important;
+}*/
+
+/*.ant-layout-header {
+    height: 60px;
+}*/
+/*table 行添加，修改，删除动画*/
+.Animation_AddRow {
+    animation: fadeInDown;
+    animation-duration: 1s;
+    background-color: #F5FFFA;
+}
+
+.Animation_EditRow {
+    animation: fadeInDown;
+    animation-duration: 1s;
+    background-color: #F5FFFA;
+}
+
+.Animation_DelRow {
+    animation: headShake;
+    animation-duration: 1.5s;
+    color: #ff4d4f;
+    background-color: #fffbe6;
+}
+
+/*---------------my table细线表格-------------*/
+.mytable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+    .mytable td {
+        border: 1px solid #f2f2f2;
+        border-collapse: collapse;
+        padding: 5px;
+        height: 35px;
+    }
+
+    .mytable th {
+        border: 1px solid #f2f2f2;
+        border-collapse: collapse;
+        background-color: #f5f5f5;
+        padding: 3px;
+    }
+
+    .mytable tr:hover {
+        border: 1px solid #79b7e7;
+        background: #fafafa;
+    }
+/* 使用方法<table cellspacing="1" border="0" class="mytable">。*/
+
+/*数据表顶端右侧的工具条*/
+.Table_Right_Tool {
+    width: fit-content;
+    float: right;
+    border: solid 1px #DDD;
+    border-radius: 4px;
+    padding: 2px 0 2px 0
+}

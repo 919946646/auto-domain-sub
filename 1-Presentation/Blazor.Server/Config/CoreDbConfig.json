@@ -1,0 +1,30 @@
+{
+  "DbConfig": [
+    {
+      "ID": "Sqlite",
+      "Name": "Sqlite数据库",
+      "DbServeIP": "",
+      "DbType": 2,
+      "DbUsername": "",
+      "DbPassword": "",
+      "DbName": "",
+      "SqliteFilePath": "../../../../Data/Data.db",
+      "IsDefault": true,
+      "IsReadOnly": false,
+      "Tenant_id": "1675477064234438656"
+    },
+    {
+      "Id": "唯一ID连接标识",
+      "Name": "SqlServer_CRM数据库",
+      "DbServeIP": "127.0.0.1",
+      "DbType": 1,
+      "DbUsername": "database",
+      "DbPassword": "***",
+      "DbName": "database",
+      "SqliteFilePath": null,
+      "IsDefault": false,
+      "IsReadOnly": false,
+      "Tenant_id": "1675477064234438656"
+    }
+  ]
+}
