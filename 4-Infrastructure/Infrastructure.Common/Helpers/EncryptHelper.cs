@@ -137,7 +137,8 @@ namespace Infrastructure.Common.Helpers
                 }
                 catch
                 {
-                    return "解密错误";
+                    //return "解密错误";
+                    return encryptedString;
                 }
             }
         }

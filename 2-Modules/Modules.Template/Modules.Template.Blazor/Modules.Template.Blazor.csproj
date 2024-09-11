@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AntDesign" Version="0.20.4.1" />
+    <PackageReference Include="AntDesign" Version="0.20.4.2" />
     <PackageReference Include="AntDesign.Charts" Version="0.5.5" />
     <PackageReference Include="DeepCloner" Version="0.10.4" />
     <PackageReference Include="Mapster" Version="7.4.0" />
