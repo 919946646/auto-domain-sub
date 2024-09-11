@@ -64,6 +64,27 @@
             </Card>
         </ChildContent>
     </Panel>
+        <Panel Header="CRM系统表" Key="2">
+        <ExtraTemplate>
+            <div @onclick:stopPropagation>
+                <Checkbox @bind-Checked="@Entities_CrmChecked" OnChange="Entities_CRM_CheckChanged">
+                    选择全部
+                </Checkbox>
+            </div>
+        </ExtraTemplate>
+        <ChildContent>
+            <Card>
+                @foreach (var item in Entities_CRM)
+                {
+                    <CardGrid Style="width:20%;text-align:center" Hoverable="true">
+                        <Checkbox @bind-Checked="item.IsCreate">
+                            @item.EntityName
+                        </Checkbox>
+                    </CardGrid>
+                }
+            </Card>
+        </ChildContent>
+    </Panel>
 </Collapse>
 <br />
 @code {
