@@ -14,17 +14,10 @@ namespace Modules.Template.Shared.CodeTemplate
         [Required(ErrorMessage = "姓名必须填写")]
         [DisplayName("姓名")]
         public string Username { get; set; }
-        [DisplayName("名称")]
-        public string Name { get; set; }
-
-        [DisplayName("E-mail")]
-        public string Email { get; set; }
-
-        [DisplayName("生日")]
-        public DateTime BirthDate { get; set; }
-
-        [DisplayName("租户id")]
-        [Required(ErrorMessage = "租户不能为空")]
+        [DisplayName("密码")]
+        [Required(ErrorMessage = "密码不能为空")]
+        public string Password { get; set; }
+        [DisplayName("说明")]
         public string Notes { get; set; }
         //CodeGenerator end
     }
