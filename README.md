@@ -1,7 +1,7 @@
 # Auto-Domain-Sub
 
 #### 介绍
-企业中台基础框架。V1.0稳定版
+企业中台基础框架。
 
 #### 软件架构
 使用 Blazor，AntDesign, Sqlsugar, Mapster, MediatR, NPOI, Yitter.IdGenerator, DeepCloner, Quartz, FluentValidation,Humanizer,LocalStorage,Serilog 开源组件
