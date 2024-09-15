@@ -40,9 +40,9 @@ namespace Modules.Template.AppServices.CodeTemplate
             //影响构造树的条件过滤
             object[] inIds = _repository.DbClient.Queryable<CodeTemplateTreeEntity>()
             .Where(TModel.ConditionalModels)
-            .Select(it => it.ID).ToList().Cast<object>().ToArray();
+            .Select(it => it.id).ToList().Cast<object>().ToArray();
 
-            var data = await _repository.DbClient.Queryable<CodeTemplateTreeEntity>().OrderBy(TModel.OrderByModel).ToTreeAsync(it => it.SqlsugarTreeChild, it => it.PARENTID, 0, inIds);
+            var data = await _repository.DbClient.Queryable<CodeTemplateTreeEntity>().OrderBy(TModel.OrderByModel).ToTreeAsync(it => it.SqlsugarTreeChild, it => it.parentid, 0, inIds);
 
             var TreeData = _mapper.Map<List<CodeTemplateTreeVM>>(data);
             //取得数量

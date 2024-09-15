@@ -57,7 +57,7 @@ namespace Modules.Template.Blazor.Pages.CodeTemplate.Components
 
             List<CodeTemplateTreeVM> listPidName = list.Where(a => a.Parentid == pid).ToList();
             //list.RemoveAll(a => a.pid == pid);
-            List<CascaderNode> treeRes = listPidName.Select(a => new CascaderNode() { Value = a.Id, Label = a.Name }).ToList();
+            List<CascaderNode> treeRes = listPidName.Select(a => new CascaderNode() { Value = a.Id, Label = a.Username }).ToList();
             if (treeList == null || treeList.Count == 0)
             {
                 treeList.AddRange(treeRes);
