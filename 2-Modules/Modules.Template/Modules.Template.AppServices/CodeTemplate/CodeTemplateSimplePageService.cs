@@ -13,11 +13,11 @@ namespace Modules.Template.AppServices.CodeTemplate
         private ICurrentUserService _currentUserService;
         private IMapper _mapper;
 
-        public CodeTemplateSimplePageService(ICodeTemplateRepository Repository, ICurrentUserService CurrentUser, IMapper _mapper)
+        public CodeTemplateSimplePageService(ICodeTemplateRepository Repository, ICurrentUserService CurrentUser, IMapper mapper)
         {
             this._currentUserService = CurrentUser;
             this._repository = Repository;
-            this._mapper = _mapper;
+            this._mapper = mapper;
         }
         #region 查询
         public async Task<CodeTemplateVM> QueryVmByIdAsync(string Id)
