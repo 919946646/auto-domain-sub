@@ -10,6 +10,7 @@ namespace Modules.Template.Repository.Base
         {
             //指定模块使用的数据库
             //base.SetDbClient("数据库ID");//CoreDbConfig.json 里的数据库id
+            base.SetDbClient(); //使用默认库
         }
     }
 }
