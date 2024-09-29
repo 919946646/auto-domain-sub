@@ -6,17 +6,13 @@ namespace Modules.CRM.Domain.DbEntity
     ///
     ///</summary>
     [SugarTable("Test")]
-    public partial class TestEntity
+    public partial class TestEntity : Core.Domain.Base.Entity
     {
         public TestEntity()
         {
 
 
         }
-
-        [SugarColumn(IsPrimaryKey = true, Length = 36)]
-        public string ID { get; set; }
-
 
         [SugarColumn(Length = 36, IsNullable = true)]
         public string ITEM_TYPE_ID { get; set; }

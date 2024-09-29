@@ -25,14 +25,14 @@ namespace Modules.Template.AppServices.CodeTemplate
         private IMapper _mapper;
         public TableDataModel<CodeTemplateVM> TableDataModel { get; private set; }
         public ObjectModel ObjectModel { get; private set; } = new ObjectModel();
-        public CodeTemplatePageService(IMapper _mapper, IObjectService objectService, ICodeTemplateRepository Repository, IBase_logService logService, IBase_user_columnsService user_ColumnsService, ICurrentUserService CurrentUser)
+        public CodeTemplatePageService(IMapper mapper, IObjectService objectService, ICodeTemplateRepository Repository, IBase_logService logService, IBase_user_columnsService user_ColumnsService, ICurrentUserService CurrentUser)
         {
             this.objectService = objectService;
             this._currentUserService = CurrentUser;
             this.user_ColumnsService = user_ColumnsService;
             this.logService = logService;
             _repository = Repository;
-            this._mapper = _mapper;
+            this._mapper = mapper;
         }
 
         private string Old_Id = string.Empty;

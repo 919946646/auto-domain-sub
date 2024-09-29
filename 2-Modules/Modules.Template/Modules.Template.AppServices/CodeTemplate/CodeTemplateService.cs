@@ -14,7 +14,8 @@ namespace Modules.Template.AppServices.CodeTemplate
         public CodeTemplateService(ICodeTemplateRepository Repository, ICurrentUserService CurrentUser, IMapper mapper)
         {
             this._currentUserService = CurrentUser;
-            _repository = Repository;
+            this._repository = Repository;
+            this._mapper = mapper;
         }
         #region 查询
         public async Task<CodeTemplateVM> QueryVmByIdAsync(string Id)
