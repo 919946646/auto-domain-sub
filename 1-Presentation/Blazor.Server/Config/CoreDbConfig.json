@@ -25,6 +25,27 @@
       "IsDefault": false,
       "IsReadOnly": false,
       "Tenant_id": "1675477064234438656"
+    },
+    {
+      "Name": "勤哲excel服务器",
+      "DbServeIP": "localhost",
+      "DbPort": null,
+      "DbType": 1,
+      "DbUsername": "sa",
+      "DbPassword": "szG/s/5ors+O4ncpZOt+7A==",
+      "DbName": "ESSample",
+      "Service_name": null,
+      "SqliteFilePath": null,
+      "IsDefault": false,
+      "IsReadOnly": false,
+      "Tenant_id": "1675477064234438656",
+      "Id": "excel",
+      "Createuid": "admin",
+      "Createtime": "2024-10-08T21:29:58.8449816+08:00",
+      "Updateuid": null,
+      "Updatetime": null,
+      "Row_CSS_Class": null,
+      "Row_no": 0
     }
   ]
 }

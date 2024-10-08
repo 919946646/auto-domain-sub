@@ -26,7 +26,7 @@
     <PackageReference Include="Mapster" Version="7.4.0" />
     <PackageReference Include="Mapster.DependencyInjection" Version="1.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.8" />
-    <PackageReference Include="Ocelot.Provider.Consul" Version="23.3.3" />
+    <PackageReference Include="Ocelot.Provider.Consul" Version="23.3.4" />
     <PackageReference Include="Quartz" Version="3.13.0" />
   </ItemGroup>
 
